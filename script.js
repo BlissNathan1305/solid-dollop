@@ -14,3 +14,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     navbar.classList.remove("show");
   });
 });
+
+// ===== Scroll Animation for Workflow Section =====
+window.addEventListener("scroll", () => {
+  const workflow = document.querySelector("#workflow");
+  if (!workflow) return;
+  const position = workflow.getBoundingClientRect().top;
+  const screenPosition = window.innerHeight / 1.3;
+  if (position < screenPosition) {
+    workflow.classList.add("visible");
+  }
+});
